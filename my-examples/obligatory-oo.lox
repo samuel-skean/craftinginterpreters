@@ -1,0 +1,34 @@
+class Person {
+    init(name) {
+        this.name = name;
+    }
+    sayHi() {
+        print "My name is " + this.name + ".";
+    }
+}
+
+class Student < Person {
+    init(name, gpa) {
+        super.init(name);
+        this.gpa = gpa;
+    }
+}
+
+class AcademicallyObsessedStudent < Student {
+    // init can be inherited
+
+    sayHi() {
+        super.sayHi();
+        print "My GPA is:";
+        print this.gpa;
+    }
+}
+
+// Just because it isn't required doesn't make it a bad idea:
+fun main() {
+    var sam;
+    sam = AcademicallyObsessedStudent("Samuel", 3.66);
+    sam.sayHi();
+}
+
+main();
